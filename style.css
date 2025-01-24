@@ -9,7 +9,7 @@ body, html {
 .container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
     width: 430px; /* Adjust width to fit two larger squares and the gap */
     margin-top: 20px; /* Add some margin from the top */
 }
@@ -24,37 +24,27 @@ body, html {
     font-weight: bold;
     border-radius: 20%;
     position: relative; /* Add relative positioning */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .square:hover {
     transform: scale(1.1); /* Scale up the square by 10% on hover */
 }
 
-.square1 {
+.square1, .square2, .square3, .square4 {
     z-index: 0;
     background-color: green;
 }
 
-.square2 {
-    z-index: 0;
-    background-color: green;
-}
-
-.square3 {
-    z-index: 0;
-    background-color: green;
-}
-
-.square4 {
-    z-index: 0;
-    background-color: green;
+.square.red {
+    background-color: red !important;
 }
 
 .titre {
     position: absolute; /* Position the text absolutely */
     bottom: 20px; /* Position 10px from the bottom */
     right: 20px; /* Position 10px from the right */
-    color: black;
+    color: white;
     z-index: 1;
 }
 
