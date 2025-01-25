@@ -10,13 +10,25 @@ function changeColorAndImage(element) {
         img.src = 'assets/Soleil.jpeg';
     }
 
-    // Send API command
-    sendApiCommand(element);
+    // Send API command based on the current color
+    if (element.classList.contains('red')) {
+        sendApiCommand(element, "red");
+    } else {
+        sendApiCommand(element, "green");
+    }
 }
 
-function sendApiCommand(element) {
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://example.com/api/command", true); // Replace with your API endpoint
+function sendApiCommand(element, color) {
+    const xhr = new XMLHttpRequest();   
+    let apiUrl = "";
+
+    if (color === "red") {
+        apiUrl = "http://192.168.0.49/core/api/jeeApi.php?apikey=WPsynhMvFe6gLnEkWmqXcM3Jv66g84lm&type=cmd&id=491"; // API endpoint for red
+    } else {
+        apiUrl = "http://192.168.0.49/core/api/jeeApi.php?apikey=WPsynhMvFe6gLnEkWmqXcM3Jv66g84lm&type=cmd&id=490"; // API endpoint for green
+    }
+
+    xhr.open("POST", apiUrl, true);
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
     const data = {
