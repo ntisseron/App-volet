@@ -8,21 +8,33 @@
 </head>
 <body>
     <div class="container">
-        <div class="square square1" onclick="changeColorAndImage(this)">
+        <div class="square square1">
             <p class="titre">Chambre<br>Nathan</p>
-            <img src="assets/Soleil.jpeg" alt="Lune" class="image">
+            <label class="switch">
+                <input type="checkbox" onclick="changeColorAndImage(this.parentElement)">
+                <span class="slider"></span>
+            </label>
         </div>
-        <div class="square square2" onclick="changeColorAndImage(this)">
+        <div class="square square2">
             <p class="titre">Chambre<br>Lisa</p>
-            <img src="assets/Soleil.jpeg" alt="Lune" class="image">
+            <label class="switch">
+                <input type="checkbox" onclick="changeColorAndImage(this.parentElement)">
+                <span class="slider"></span>
+            </label>
         </div>
-        <div class="square square3" onclick="changeColorAndImage(this)">
+        <div class="square square3">
             <p class="titre">Chambre<br>Parents</p>
-            <img src="assets/Soleil.jpeg" alt="Lune" class="image">
+            <label class="switch">
+                <input type="checkbox" onclick="changeColorAndImage(this.parentElement)">
+                <span class="slider"></span>
+            </label>
         </div>
-        <div class="square square4" onclick="changeColorAndImage(this)">
+        <div class="square square4">
             <p class="titre">Cuisine</p>
-            <img src="assets/Soleil.jpeg" alt="Lune" class="image">
+            <label class="switch">
+                <input type="checkbox" onclick="changeColorAndImage(this.parentElement)">
+                <span class="slider"></span>
+            </label>
         </div>
     </div>
     <script src="script.js"></script>

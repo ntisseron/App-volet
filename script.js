@@ -1,14 +1,6 @@
 function changeColorAndImage(element) {
-    // Change the background color to red
+    // Toggle the red class
     element.classList.toggle('red');
-
-    // Change the image source
-    const img = element.querySelector('.image');
-    if (img.src.includes('Soleil.jpeg')) {
-        img.src = 'assets/Lune.jpeg';
-    } else {
-        img.src = 'assets/Soleil.jpeg';
-    }
 
     // Send API command based on the current color
     if (element.classList.contains('red')) {
@@ -19,7 +11,7 @@ function changeColorAndImage(element) {
 }
 
 function sendApiCommand(element, color) {
-    const xhr = new XMLHttpRequest();   
+    const xhr = new XMLHttpRequest();
     let apiUrl = "";
 
     if (color === "red") {
