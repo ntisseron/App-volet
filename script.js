@@ -2,14 +2,6 @@ function changeColorAndImage(element) {
     // Change the background color to red
     element.classList.toggle('red');
 
-    // Change the image source
-    const img = element.querySelector('.image');
-    if (img.src.includes('Soleil.jpeg')) {
-        img.src = 'assets/Lune.jpeg';
-    } else {
-        img.src = 'assets/Soleil.jpeg';
-    }
-
     // Send API command based on the current color
     if (element.classList.contains('red')) {
         sendApiCommand(element, "red");
@@ -30,6 +22,9 @@ function sendApiCommand(element, color) {
 
     xhr.open("POST", apiUrl, true);
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhr.setRequestHeader("Access-Control-Allow-Origin", "*"); // Allow CORS
+    xhr.setRequestHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS"); // Allow methods
+    xhr.setRequestHeader("Access-Control-Allow-Headers", "Content-Type"); // Allow headers
 
     const data = {
         id: element.classList[1], // Assuming the second class is the identifier (e.g., square1, square2)
