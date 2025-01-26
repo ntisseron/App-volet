@@ -1,8 +1,15 @@
 function changeColorAndImage(element) {
-    // Toggle the red class
+    // Change the background color to red
     element.classList.toggle('red');
 
-<<<<<<< HEAD
+    // Change the image source
+    const img = element.querySelector('.image');
+    if (img.src.includes('Soleil.jpeg')) {
+        img.src = 'assets/Lune.jpeg';
+    } else {
+        img.src = 'assets/Soleil.jpeg';
+    }
+
     // Send API command based on the current color
     if (element.classList.contains('red')) {
         sendApiCommand(element, "red");
@@ -22,23 +29,6 @@ function sendApiCommand(element, color) {
     }
 
     xhr.open("POST", apiUrl, true);
-=======
-    // Change the image source
-    const img = element.querySelector('.image');
-    if (img.src.includes('Soleil.jpeg')) {
-        img.src = 'assets/Lune.jpeg';
-    } else {
-        img.src = 'assets/Soleil.jpeg';
-    }
-
-    // Send API command
-    sendApiCommand(element);
-}
-
-function sendApiCommand(element) {
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://example.com/api/command", true); // Replace with your API endpoint
->>>>>>> parent of 5ba55a6 (4)
     xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
     const data = {
