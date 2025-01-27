@@ -15,17 +15,17 @@ function redirectToAmis() {
 }
 
 function redirectToBureau() {
-    window.location.href = '../Chambre/Bureau.html';
+    window.location.href = '../Bureau.html';
 }
 
 function redirectToVolets() {
-    window.location.href = '../Chambre/Volets.html';
+    window.location.href = '../Volets.html';
 }
 
 function redirectToPiscine() {
-    window.location.href = '../Chambre/Piscine.html';
+    window.location.href = '../Piscine.html';
 }
 
 function redirectToAutres() {
-    window.location.href = '../Chambre/Autres.html';
+    window.location.href = '../Autres.html';
 }
