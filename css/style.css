@@ -20,11 +20,12 @@ body, html {
 }
 
 .square {
-    width: 200px; /* Adjust width to fit two squares per row with gap */
-    height: 200px; /* Set the height of the square */
+    width: 150px; /* Adjust the width */
+    height: 150px; /* Adjust the height */
     display: flex;
+    flex-direction: column; /* Arrange items in a column */
     align-items: center;
-    justify-content: center;
+    justify-content: space-between; /* Space items evenly */
     font-size: 20px;
     font-weight: bold;
     border-radius: 20%;
@@ -32,6 +33,7 @@ body, html {
     transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effect and color change */
     border: 2px solid black; /* Add border */
     box-shadow: 4px 4px black; /* Add shadow */
+    padding: 10px; /* Add padding */
 }
 
 .square:active {
@@ -63,20 +65,18 @@ body, html {
     z-index: 4;
     background-color: #7F796D;
 }
-.titre {
-    position: absolute; /* Position the text absolutely */
-    bottom: 10px; /* Position 10px from the bottom */
-    right: 10px; /* Position 10px from the right */
-    color: black;
-    z-index: 1;
-    font-size: 22px;
-}
 
 .corner-image {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 90px; /* Adjust the size as needed */
-    height: 90px; /* Adjust the size as needed */
-    z-index: 2;
+    width: 70px; /* Adjust the width */
+    height: 70px; /* Adjust the height */
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.titre {
+    font-size: 1em; /* Adjust the font size */
+    text-align: center;
+    color: #333;
+    margin: 0;
+    margin-bottom: 20px;
 }

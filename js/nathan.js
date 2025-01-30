@@ -5,10 +5,10 @@ function toggleMode() {
 
     if (isChecked) {
         contentWrapper.classList.add('night-mode');
-        voletImage.src = '../assets/FenetreFerme.png';
+        voletImage.src = '../Images/FenetreFerme.png';
     } else {
         contentWrapper.classList.remove('night-mode');
-        voletImage.src = '../assets/Volets.png';
+        voletImage.src = '../Images/Volets.png';
     }
 
     // Envoyer une requête API
@@ -23,11 +23,11 @@ function toggleNewContentWrapper() {
     if (isChecked) {
         newContentWrapper.classList.add('yellow-background');
         newContentWrapper.classList.remove('black-background');
-        newVoletImage.src = '../assets/ampoule.png';
+        newVoletImage.src = '../Images/ampoule.png';
     } else {
         newContentWrapper.classList.add('black-background');
         newContentWrapper.classList.remove('yellow-background');
-        newVoletImage.src = '../assets/ampouleEteint.png';
+        newVoletImage.src = '../Images/ampouleEteint.png';
     }
 
     // Envoyer une requête API
