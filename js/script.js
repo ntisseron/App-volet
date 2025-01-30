@@ -19,7 +19,7 @@ function redirectToBureau() {
 }
 
 function redirectToVolets() {
-    window.location.href = '../Volets.html';
+    window.location.href = './Autres/Volets.html';
 }
 
 function redirectToPiscine() {

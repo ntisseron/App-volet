@@ -56,3 +56,7 @@ function sendApiRequest(isChecked) {
         console.error('Error:', error);
     });
 }
+
+function redirectToIndex() {
+    window.location.href = '../index.html';
+}
