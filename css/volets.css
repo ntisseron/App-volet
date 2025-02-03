@@ -19,11 +19,6 @@ body, html {
     margin-top: 20px; /* Add some margin from the top if needed */
 }
 
-.content-row {
-    display: flex;
-    flex-direction: row; /* Arrange items in a row */
-    gap: 20px; /* Add space between the two rectangles */
-}
 
 .titre {
     font-size: 4em; /* Increase the font size */
