@@ -26,6 +26,6 @@ function redirectToPiscine() {
     window.location.href = '../Piscine.html';
 }
 
-function redirectToAutres() {
-    window.location.href = '../Autres.html';
+function redirectToScenario() {
+    window.location.href = './Autres/Scenario.html';
 }
