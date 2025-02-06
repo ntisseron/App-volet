@@ -9,9 +9,10 @@
 </head>
 <body>
 
-<!-- Volet Salon 1  --> 
+<!-- Volet Salon 1  -->
+<p class="titre" onclick="redirectToIndex()">Volets</p>
+<h2 class="sous-titre">Cuisine</h2> 
     <div class="container">
-        <p class="titre" onclick="redirectToIndex()">Volets</p>
         <p class="sous-titre"></p>
         <div class="content-wrapper" id="contentWrapper">
             <div class="content">
@@ -77,12 +78,13 @@
         </div>
 
 <!-- Volet Salon 2  --> 
+<h2 class="sous-titre">Entrée</h2>
         <div class="container">
             <div class="content-wrapper" id="contentWrapper">
                 <div class="content">
                     <img id="voletImage" src="../Images//Volets.png" alt="Chambre" class="image">
                     <label class="switch">
-                        <input id="input" type="checkbox" onclick="toggleMode()" />
+                        <input id="input" type="checkbox" onclick="toggleMode2()" />
                         <div class="slider round">
                             <div class="sun-moon">
                                 <svg id="moon-dot-1" class="moon-dot" viewBox="0 0 100 100">
@@ -142,12 +144,13 @@
             </div>
 
 <!-- Volet Salon 3  --> 
+<h2 class="sous-titre">salon 1</h2>
 <div class="container">
     <div class="content-wrapper" id="contentWrapper">
         <div class="content">
             <img id="voletImage" src="../Images//Volets.png" alt="Chambre" class="image">
             <label class="switch">
-                <input id="input" type="checkbox" onclick="toggleMode()" />
+                <input id="input" type="checkbox" onclick="toggleMode(3)" />
                 <div class="slider round">
                     <div class="sun-moon">
                         <svg id="moon-dot-1" class="moon-dot" viewBox="0 0 100 100">
@@ -207,6 +210,7 @@
     </div>
 
 <!-- Cuisine  --> 
+<h2 class="sous-titre">Salon 2</h2>
 <div class="container">
     <div class="content-wrapper" id="contentWrapper">
         <div class="content">
@@ -272,6 +276,6 @@
     </div>
 
 
-    <script src="/js/nathan.js"></script>
+    <script src="/js/volets.js"></script>
 </body>
 </html>

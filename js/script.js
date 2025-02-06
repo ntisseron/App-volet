@@ -15,11 +15,11 @@ function redirectToAmis() {
 }
 
 function redirectToBureau() {
-    window.location.href = '../Bureau.html';
+    window.location.href = '../Autres/Bureau.html';
 }
 
 function redirectToVolets() {
-    window.location.href = './Autres/Volets.html';
+    window.location.href = '../Autres/Volets.html';
 }
 
 function redirectToPiscine() {

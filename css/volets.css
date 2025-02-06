@@ -15,10 +15,15 @@ body, html {
     display: flex;
     flex-direction: column; /* Arrange items in a column */
     align-items: center; /* Center items horizontally */
-    gap: 10px;
+    gap: 5px; /* Add space between the items */
     margin-top: 20px; /* Add some margin from the top if needed */
 }
 
+.row {
+    display: flex;
+    flex-direction: row; /* Arrange items in a row */
+    gap: 20px; /* Add space between the items */
+}
 
 .titre {
     font-size: 4em; /* Increase the font size */
@@ -34,17 +39,19 @@ body, html {
     text-align: center;
     color: #666;
     font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 5px; /* Reduce the gap between the subtitle and the rectangle */
 }
 
 .content-wrapper {
     display: flex;
+    flex-direction: column; /* Arrange items in a column */
     align-items: center;
     justify-content: center;
     background-color: #7ec3f1; /* Set background color */
     padding: 30px;
     border-radius: 30px; /* Add rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
-    margin-bottom: 20px; /* Add space between the two squares */
+    margin: 10px; /* Add margin between the squares */
 }
 
 .content-wrapper2 {
@@ -55,7 +62,7 @@ body, html {
     padding: 30px;
     border-radius: 30px; /* Add rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
-    margin-bottom: 20px; /* Add space between the two squares */
+    margin: 10px; /* Add margin between the squares */
 }
 
 .content-wrapper.night-mode {
