@@ -178,8 +178,7 @@ verifier la connexion:
 Donner les droits à l'utilisateur jeedom et www-data.
 jeedom owner du répertoire
 ```sudo chown -R jeedom /var/www/App-volet```
-mettr le user www-data utilisé par Apache sur le group
-
+mettre le user www-data utilisé par Apache sur le group
  ```$ sudo chgrp -R www-data /var/www/App-volet```
 ```
 $ ls-l
@@ -190,11 +189,30 @@ drwxrwsr-x 2 jeedom www-data 4096 janv. 31 00:07 Images
 drwxrwsr-x 2 jeedom www-data 4096 janv. 31 00:12 js
 drwxrwsr-x 2 jeedom www-data 4096 janv. 28 09:42 log
 ```
+Changer les permissions : Owner:rwx, www-data:r-x, others:r-x
+```sudo chmod -R 755 /var/www/```
+```drwxr-sr-x 2 jeedom www-data 4096 févr. 10 09:06 Autres
+drwxr-sr-x 2 jeedom www-data 4096 févr. 10 09:06 Chambre
+drwxr-sr-x 2 jeedom www-data 4096 févr. 10 09:06 css
+drwxr-sr-x 2 jeedom www-data 4096 févr. 10 09:06 Images
+-rwxr-xr-x 1 root   www-data 2045 févr. 10 09:06 index.html
+drwxr-sr-x 2 jeedom www-data 4096 févr. 10 09:06 js
+drwxr-sr-x 2 jeedom www-data 4096 janv. 28 09:42 log
+-rwxr-xr-x 1 root   www-data 6419 févr. 10 09:06 README.md
+```
+
+
+Update du code régulièrement. \
+Le code source sur GitHub étant modifié, le code en local est en retard, il doit d'abord être synchronisé: \
+```sudo git stash``` 
+\
+Synchroniser le code : \
+```sudo git pull```
 
 
 
 
 
 
-sudo git clone git@github.com:ntisseron/App-volet.git
+
 
