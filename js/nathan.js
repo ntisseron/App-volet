@@ -35,8 +35,8 @@ function toggleNewContentWrapper() {
 }
 
 function sendVoletApiRequest(isChecked) {
-    const urlOpen = 'http://192.168.0.49/core/api/jeeApi.php?apikey=WPsynhMvFe6gLnEkWmqXcM3Jv66g84lm&type=cmd&id=491'; // API volet ouvert
-    const urlClose = 'http://192.168.0.49/core/api/jeeApi.php?apikey=WPsynhMvFe6gLnEkWmqXcM3Jv66g84lm&type=cmd&id=490'; // API volet fermé
+    const urlOpen = 'http://192.168.0.49/core/api/jeeApi.php?apikey='; // API volet ouvert
+    const urlClose = 'http://192.168.0.49/core/api/jeeApi.php?apikey='; // API volet fermé
 
     const url = isChecked ? urlOpen : urlClose;
 
@@ -58,8 +58,8 @@ function sendVoletApiRequest(isChecked) {
 }
 
 function sendLightApiRequest(isChecked) {
-    const urlOn = 'http://192.168.0.49/core/api/jeeApi.php?apikey=WPsynhMvFe6gLnEkWmqXcM3Jv66g84lm&type=cmd&id=490'; //API pour allumer la lumière
-    const urlOff = 'http://192.168.0.49/core/api/jeeApi.php?apikey=WPsynhMvFe6gLnEkWmqXcM3Jv66g84lm&type=cmd&id=491'; //API pour éteindre la lumière
+    const urlOn = 'http://192.168.0.49/core/api/jeeApi.php?apikey='; //API pour allumer la lumière
+    const urlOff = 'http://192.168.0.49/core/api/jeeApi.php?apikey='; //API pour éteindre la lumière
 
     const url = isChecked ? urlOn : urlOff;
 

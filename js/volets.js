@@ -39,8 +39,8 @@ function toggleMode2() {
 
 // Volet Cuisine 
 function sendVoletApiRequest(isChecked) {
-    const urlOpen = 'http://192.168.0.49/core/api/jeeApi.php?apikey=WPsynhMvFe6gLnEkWmqXcM3Jv66g84lm&type=cmd&id=491'; // API volet cuisine ouvert
-    const urlClose = 'http://192.168.0.49/core/api/jeeApi.php?apikey=WPsynhMvFe6gLnEkWmqXcM3Jv66g84lm&type=cmd&id=490'; // API volet cuisine fermé
+    const urlOpen = 'http://192.168.0.49/core/api/jeeApi.php?apikey='; // API volet cuisine ouvert
+    const urlClose = 'http://192.168.0.49/core/api/jeeApi.php?apikey='; // API volet cuisine fermé
 
     const url = isChecked ? urlOpen : urlClose;
 
