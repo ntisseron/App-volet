@@ -22,7 +22,7 @@ function toggleNewContentWrapper() {
 
     if (isChecked) {
         newContentWrapper.classList.add('yellow-background');
-        newContentWrapper.classList.remove('black-background');
+        newContentWrapper.classList.remove('black-background');P
         newVoletImage.src = '../Images/ampoule.png';
     } else {
         newContentWrapper.classList.add('black-background');
