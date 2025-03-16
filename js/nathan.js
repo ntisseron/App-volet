@@ -13,8 +13,8 @@ function toggleMode() {
         voletImage.src = '../Images/Volets.png';
     }
 
-    // Envoyer requête API pour les volets
-    sendVoletApiRequest(isChecked);
+    // Envoyer requête API pour les volets de la chambre Nathan
+    sendVoletApiRequest('nathan', isChecked);
 }
 
 function toggleNewContentWrapper() {
@@ -32,10 +32,10 @@ function toggleNewContentWrapper() {
         newVoletImage.src = '../Images/ampouleEteint.png';
     }
 
-    // Envoyer requête API pour la lumière
-    sendLightApiRequest(isChecked);
+    // Envoyer requête API pour la lumière de la chambre Nathan
+    sendLightApiRequest('nathan', isChecked);
 }
 
 function redirectToIndex() {
     window.location.href = '../index.html';
-}
+ }
