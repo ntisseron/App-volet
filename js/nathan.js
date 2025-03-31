@@ -1,72 +1,70 @@
-// Vérifier que le script est bien chargé
-console.log("Nathan.js chargé !");
-
-// Attendre que le DOM soit chargé avant d'ajouter les écouteurs d'événements
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".titre").addEventListener("click", redirectToIndex);
-    document.getElementById("input").addEventListener("change", toggleMode);
-    document.querySelector(".cb").addEventListener("change", toggleNewContentWrapper);
+    const boutonsVolet = document.querySelectorAll('input[name="volet-radio"]');
+    const voletImage = document.getElementById("voletImage"); // Image du volet
+
+    boutonsVolet.forEach(bouton => {
+        bouton.addEventListener("change", function () {
+            if (this.checked) {
+                envoyerCommandeVolet(this.value);
+                mettreAJourImage(this.value);
+            }
+        });
+    });
 });
 
-// Fonction pour rediriger vers l'index
-function redirectToIndex() {
-    console.log("Redirection vers index.html...");
-    window.location.href = "/index.html"; // Vérifie que le fichier existe bien
-}
+/**
 
-// Fonction pour basculer l'état du volet
-function toggleMode() {
-    let isChecked = document.getElementById("input").checked;
-    console.log("Toggle Mode:", isChecked);
+ * @param {string} action - "open", "close" ou "stop".
+ */
+function envoyerCommandeVolet(action) {
+    let apiUrl = "";
 
-    // Appel à l'API pour gérer le volet
-    sendVoletApiRequest("nathan", "volet", isChecked);
+    switch (action) {
+        case "open":
+            apiUrl = "http://192.168.0.49/core/api/jeeApi.php?apikey=";
+            break;
+        case "close":
+            apiUrl = "http://192.168.0.49/core/api/jeeApi.php?apikey=";
+            break;
+        case "stop":
+            apiUrl = "http://192.168.0.49/core/api/jeeApi.php?apikey=";
+            break;
+        default:
+            console.error("Action invalide :", action);
+            return;
+    }
 
-    // Si la lumière est aussi gérée par ce switch, on l'appelle ici
-    sendLightApiRequest("nathan", isChecked);
-}
-
-// Fonction pour basculer le deuxième bouton (lumière ou autre fonctionnalité)
-function toggleNewContentWrapper() {
-    let isChecked = document.querySelector(".cb").checked;
-    console.log("Toggle New Content:", isChecked);
-
-    // Tu peux ici appeler d'autres fonctions si nécessaire
-}
-
-// Fonction pour envoyer une requête API pour le volet
-function sendVoletApiRequest(piece, volet, isChecked) {
-    console.log(`Envoi de la requête API : ${piece}, ${volet}, état: ${isChecked}`);
-    fetch("/api/volets", {
+    fetch(apiUrl, {
         method: "POST",
         headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            piece: piece,
-            volet: volet,
-            state: isChecked,
-        }),
+            "Content-Type": "application/json"
+        }
     })
     .then(response => response.json())
-    .then(data => console.log("Réponse API:", data))
-    .catch(error => console.error("Erreur API:", error));
+    .then(data => {
+        console.log(`Commande ${action} envoyée avec succès :`, data);
+    })
+    .catch(error => {
+        console.error(`Erreur lors de l'envoi de la commande ${action} :`, error);
+    });
 }
 
-// Fonction pour envoyer une requête API pour la lumière
-function sendLightApiRequest(piece, isChecked) {
-    console.log(`Envoi de la requête API pour la lumière : ${piece}, état: ${isChecked}`);
-    fetch("/api/lights", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            piece: piece,
-            lightState: isChecked,
-        }),
-    })
-    .then(response => response.json())
-    .then(data => console.log("Réponse API pour la lumière:", data))
-    .catch(error => console.error("Erreur API pour la lumière:", error));
+/**
+ * Met à jour l'image du volet en fonction de l'action sélectionnée.
+ * @param {string} action - "open", "close" ou "stop".
+ */
+function mettreAJourImage(action) {
+    const voletImage = document.getElementById("voletImage");
+
+    switch (action) {
+        case "open":
+            voletImage.src = "../Images/VoletsOuverts.png";
+            break;
+        case "close":
+            voletImage.src = "../Images/VoletsFermes.png";
+            break;
+        case "stop":
+            voletImage.src = "../Images/Volets.png";
+            break;
+    }
 }
